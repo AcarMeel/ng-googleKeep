@@ -1,0 +1,23 @@
+.app-bar {
+  height: 65px;
+  padding: 5px 90px;
+  background-color: #00BCD4;
+}
+.logo {
+  color: white;
+  font-family: 'Bungee', cursive;
+  font-size: 25px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.link {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer; 
+}
+
+.link > img {
+  width: 18px;
+  height: 18px;
+}

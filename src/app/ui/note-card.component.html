@@ -1,0 +1,13 @@
+<div class="note-card row shadow-1" 
+    (mouseleave)="toggleCheck()" (mouseenter)="toggleCheck()"
+    [ngStyle]="{ 'background-color': noteInput.color }" >
+  <div class="icon" (click)="onChecked()" *ngIf="showCheck" >
+    <i class="material-icons">check</i>
+  </div>
+  <div class="col-xs-12 title">
+    {{ noteInput.title }}
+  </div>
+  <div class="col-xs-12 value">
+    {{ noteInput.value }}
+  </div>
+</div>
