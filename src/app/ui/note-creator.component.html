@@ -1,5 +1,5 @@
 <h3> <img src="assets/img/lightbulb_idea.png" alt="img"> {{ pageTitle }} </h3>
-<div class="note-creator shadow-2">
+<div class="note-creator shadow-2" [ngStyle]="{'background-color': newNote.color}" >
     <form class="row" (submit)="onCreateNote()" >
         <input
             type="text"
@@ -18,6 +18,9 @@
             class="col-xs-10"
         >
         <div class="actions col-xs-12 row between-xs" *ngIf = "fullForm">
+            <div class="col-xs-3">
+                <color-picker [colors]="colorPalette" (selected)='onColorSelect($event)' ></color-picker>
+            </div>
             <button
             type="submit"
             class="btn-light"

@@ -12,19 +12,22 @@ export class NoteCreatorComponent {
 
     fullForm: boolean = false;
 
+    colorPalette : string[] = ['#ED217C', '#17BEBB', '#AA3E98', '#DBF4A7', '#CCFF66', '#FF6666'];
+
     // Model 
     newNote = {
         title: "",
-        value: ""
+        value: "",
+        color: "#DB5ABA"
     }
 
     @Output() createNote = new EventEmitter(); // Event 
 
     // executed when submit. It's gonna fire the event 
     onCreateNote() {
-        const { title, value } = this.newNote;
+        const { title, value, color } = this.newNote;
         if(title && value) {
-            this.createNote.next({ title, value});
+            this.createNote.next({ title, value, color});
         }
 
         this.reset();
@@ -35,7 +38,8 @@ export class NoteCreatorComponent {
     reset() {
         this.newNote = {
             title: "",
-            value: ""
+            value: "",
+            color: "#DB5ABA"
         };
     }
 
@@ -43,4 +47,9 @@ export class NoteCreatorComponent {
     toggle(value: boolean) {
         this.fullForm = value;
     }
+
+    onColorSelect(color : string) {
+        this.newNote.color = color;
+    }
+    
 }
